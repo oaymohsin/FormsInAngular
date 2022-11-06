@@ -1,0 +1,50 @@
+<form class="row g-3" [formGroup]="reactiveform" (ngSubmit)="submitform()">
+    <div class="col-12 text-center">
+        <h2 class="h2 bg-primary text-white p-3" >Reactive Form</h2>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" formControlName="Email">
+      <div>
+        <span style="color: red;" *ngIf="reactiveform.get('Email').invalid && reactiveform.get('Email').touched">Entered Email is incorrect</span>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" formControlName="Password">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="Address">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" formControlName="Address2">
+    </div>
+    <div class="col-md-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity" formControlName="City">
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label" >State</label>
+      <select id="inputState" class="form-select" formControlName="State">
+        <option selected>USA</option>
+        <option>Pakistan</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip" formControlName="Zip">
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </div>
+  </form>
